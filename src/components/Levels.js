@@ -28,6 +28,7 @@ function Levels(props) {
             <NavLink
               to={`/quiz/${props.category.id}/${props.level}`}
               className="secondary_btn"
+              state={{ category: props.category.id, level: props.level }}
             >
               {' '}
               Start Quiz
