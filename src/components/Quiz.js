@@ -74,13 +74,12 @@ class Quiz extends Component {
           </span>
         </h2>
         <h3>
-          Question:-{' '}
-          <span className="text-black">{questionToDisplay.question}</span>
+          Question:- <span>{questionToDisplay.question}</span>
         </h3>
 
         {this.state.answers ? (
           <>
-            <ul className="mx-auto w-5/6 mb-10">
+            <ul>
               {this.state.answers.map((answer, i) => {
                 return (
                   <li
@@ -94,8 +93,8 @@ class Quiz extends Component {
                     className={
                       this.props.allAnswers[this.state.currentQuestion] ===
                       answer
-                        ? 'mb-5 border px-3 py-2 rounded-md bg-green-900 hover:bg-green-700 text-white cursor-pointer'
-                        : ' mb-5 border px-3 py-2 rounded-md bg-green-300 hover:bg-purple-700 cursor-pointer'
+                        ? 'option_active'
+                        : 'option'
                     }
                   >
                     {i + 1} :- {'   ' + answer}
@@ -109,9 +108,9 @@ class Quiz extends Component {
         )}
 
         {this.state.currentQuestion > 8 ? (
-          <div className="flex justify-center">
+          <div className="btn_wrapper">
             <button
-              className="px-3 py-2 rounded-md text-white bg-red-600"
+              className="btn_submit"
               onClick={(event) => {
                 this.props.handleSubmit(
                   this.props.questions,
@@ -123,9 +122,9 @@ class Quiz extends Component {
             </button>
           </div>
         ) : (
-          <div className="flex justify-center">
+          <div className="btn_wrapper">
             <button
-              className="text-white px-3 py-2 rounded-md bg-green-600 hover:bg-blue-500"
+              className="btn_next"
               onClick={(event) => {
                 this.handleNextQuestion();
               }}

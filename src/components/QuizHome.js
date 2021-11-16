@@ -45,6 +45,18 @@ class QuizHome extends Component {
     }
   };
 
+  handleSubmit = () => {
+    if (!this.state.answers[9]) {
+      alert('You must select answer of current question.');
+    } else {
+      this.setState((prevState) => {
+        return {
+          isSubmitted: !prevState.isSubmitted,
+        };
+      });
+    }
+  };
+
   render() {
     return (
       <section className="wrapper">
