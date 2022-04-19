@@ -1,8 +1,6 @@
-import Dashboard from './components/Dashboard';
 import './styles/style.css';
 import Header from './components/Header';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import QuizHome from './components/QuizHome';
+import { BrowserRouter } from 'react-router-dom';
 import Path from './components/Path';
 
 function App() {
